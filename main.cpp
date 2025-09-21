@@ -9,14 +9,14 @@ using std::endl;
 using std::string;
 using std::vector;
 
-const vector <string> VALIDATION = {"Cool","Great","Perfect","Beautiful"};
+const vector <string> VALIDATION = {"Cool","Great","Perfect","Beautiful","Aw, yeah"};
 
 int main(){
   string input;
   int pick;
 
   srand(time(0));
-  pick = rand() % 4;
+  pick = rand() % VALIDATION.size();
   cout << "What are you listening to?\n";
   getline(cin,input);
   cout << VALIDATION[pick] << "! Let's listen to more\n";
@@ -24,7 +24,7 @@ int main(){
   do{
     cout << "What's next?\n";
     getline(cin,input);
-    pick = rand() % 4;
+    pick = rand() % VALIDATION.size();
     cout << VALIDATION[pick] << "!\n";
   }while( input != "nothing" );
 
